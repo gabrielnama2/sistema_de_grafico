@@ -3,7 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PessoaCollection {
-    private List<Pessoa> pessoas;
+    //private List<Pessoa> pessoas;
+    public ArrayList<Pessoa> pessoas;
     public PessoaCollection() {
         this.setPessoas(new ArrayList<Pessoa>());
     }
@@ -12,7 +13,8 @@ public class PessoaCollection {
         //System.out.println("\nCOLLECTION: \n" + this.pessoas);
     }
 
-    public void setPessoas(List<Pessoa> pessoas) {
+    //public void setPessoas(List<Pessoa> pessoas) {
+    public void setPessoas(ArrayList<Pessoa> pessoas) {
         this.pessoas = pessoas;
     }
     
@@ -27,5 +29,9 @@ public class PessoaCollection {
         for(int i = 0; i < pessoas.size(); i++) {
             System.out.println(pessoas.toString());
         }
+    }
+
+    public List<Pessoa> getPessoas() {
+        return pessoas;
     }
 }
