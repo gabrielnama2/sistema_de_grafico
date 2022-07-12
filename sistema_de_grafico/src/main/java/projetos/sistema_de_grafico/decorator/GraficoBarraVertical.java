@@ -11,11 +11,10 @@ import org.jfree.chart.JFreeChart;
  *
  * @author Usuário
  */
-public class GraficoPizza implements IGrafico{
+public class GraficoBarraVertical implements IGrafico{
 
     @Override
     public void executar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

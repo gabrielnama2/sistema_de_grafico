@@ -19,7 +19,7 @@ import projetos.sistema_de_grafico.model.Pessoa;
  *
  * @author Usuário
  */
-public class GraficoBarra implements IGrafico{
+public class GraficoBarraHorizontal implements IGrafico{
     
     //cria dataset
     public CategoryDataset createDataSet(ArrayList<Pessoa> listaDePessoas){
@@ -56,9 +56,11 @@ public class GraficoBarra implements IGrafico{
     public JFreeChart createBarChart(CategoryDataset dataSet){
         
         JFreeChart graficoBarras = ChartFactory.createBarChart(
-                "Relação de Pessoas",
+                //"Relação de Pessoas",
                 "",
-                "Contagem",
+                "",
+                //"Contagem",
+                "",
                 dataSet, 
                 PlotOrientation.HORIZONTAL,
                 true,
@@ -68,6 +70,7 @@ public class GraficoBarra implements IGrafico{
         return graficoBarras;
     }
 
+    //cria o painel do grafico
     public ChartPanel criarGraficoBarra(ArrayList<Pessoa> listaDePessoas){
         
         CategoryDataset dataSet = this.createDataSet(listaDePessoas);
