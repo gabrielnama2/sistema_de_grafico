@@ -34,18 +34,177 @@ public class GraficoView extends javax.swing.JFrame {
     private void initComponents() {
 
         jpnGrafico = new javax.swing.JPanel();
+        grade_janela = new javax.swing.JPanel();
+        grade_elementos_graficos = new javax.swing.JPanel();
+        titulo_elementos_graficos = new javax.swing.JLabel();
+        titulo = new java.awt.Checkbox();
+        legenda = new java.awt.Checkbox();
+        titulo_eixos = new java.awt.Checkbox();
+        rotulo_dados = new java.awt.Checkbox();
+        rotulo_dados_valor = new java.awt.Checkbox();
+        rotulo_dados_porcentagem = new java.awt.Checkbox();
+        cor_barras = new java.awt.Checkbox();
+        cor_barras_grupo = new java.awt.Checkbox();
+        grade = new java.awt.Checkbox();
+        grade_grafico = new javax.swing.JPanel();
+        titulo_grafico_exibido = new javax.swing.JLabel();
+        select_tipo_grafico = new javax.swing.JComboBox<>();
+        botao_fechar = new javax.swing.JButton();
+        botao_restaurar = new javax.swing.JButton();
+        botao_desfazer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        grade_elementos_graficos.setBackground(new java.awt.Color(220, 220, 220));
+
+        titulo_elementos_graficos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        titulo_elementos_graficos.setText("Elementos gráficos:");
+
+        titulo.setLabel("Título");
+
+        legenda.setLabel("Legenda");
+
+        titulo_eixos.setLabel("Título dos eixos");
+
+        rotulo_dados.setLabel("Rótulo de Dados (%)");
+
+        rotulo_dados_valor.setLabel("Rótulo de Dados - Valor");
+
+        rotulo_dados_porcentagem.setLabel("Rótulo de Dados - Valor (%)");
+
+        cor_barras.setLabel("Cor das Barras");
+
+        cor_barras_grupo.setLabel("Cor das Barras (por grupo)");
+
+        grade.setLabel("Grade");
+
+        javax.swing.GroupLayout grade_elementos_graficosLayout = new javax.swing.GroupLayout(grade_elementos_graficos);
+        grade_elementos_graficos.setLayout(grade_elementos_graficosLayout);
+        grade_elementos_graficosLayout.setHorizontalGroup(
+            grade_elementos_graficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(grade_elementos_graficosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(grade_elementos_graficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(legenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(grade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cor_barras_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cor_barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotulo_dados_porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotulo_dados_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotulo_dados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo_eixos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo_elementos_graficos))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+        grade_elementos_graficosLayout.setVerticalGroup(
+            grade_elementos_graficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(grade_elementos_graficosLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(titulo_elementos_graficos)
+                .addGap(29, 29, 29)
+                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(legenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titulo_eixos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rotulo_dados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rotulo_dados_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rotulo_dados_porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cor_barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cor_barras_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(grade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(164, Short.MAX_VALUE))
+        );
+
+        grade_grafico.setBackground(new java.awt.Color(220, 220, 220));
+
+        javax.swing.GroupLayout grade_graficoLayout = new javax.swing.GroupLayout(grade_grafico);
+        grade_grafico.setLayout(grade_graficoLayout);
+        grade_graficoLayout.setHorizontalGroup(
+            grade_graficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 756, Short.MAX_VALUE)
+        );
+        grade_graficoLayout.setVerticalGroup(
+            grade_graficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        titulo_grafico_exibido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        titulo_grafico_exibido.setText("Gráficos padrão:");
+
+        select_tipo_grafico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barras Horizontais", "Barras Verticais" }));
+
+        botao_fechar.setText("Fechar");
+        botao_fechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_fecharActionPerformed(evt);
+            }
+        });
+
+        botao_restaurar.setText("Restaurar");
+
+        botao_desfazer.setText("Desfazer");
+
+        javax.swing.GroupLayout grade_janelaLayout = new javax.swing.GroupLayout(grade_janela);
+        grade_janela.setLayout(grade_janelaLayout);
+        grade_janelaLayout.setHorizontalGroup(
+            grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, grade_janelaLayout.createSequentialGroup()
+                .addGroup(grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(grade_janelaLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botao_desfazer, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botao_restaurar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botao_fechar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(grade_janelaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(titulo_grafico_exibido)
+                        .addGap(18, 18, 18)
+                        .addComponent(select_tipo_grafico, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(grade_janelaLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(grade_elementos_graficos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(grade_grafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37))
+        );
+        grade_janelaLayout.setVerticalGroup(
+            grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(grade_janelaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(select_tipo_grafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo_grafico_exibido))
+                .addGap(25, 25, 25)
+                .addGroup(grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(grade_grafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(grade_elementos_graficos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(grade_janelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_restaurar)
+                    .addComponent(botao_desfazer)
+                    .addComponent(botao_fechar))
+                .addGap(22, 22, 22))
+        );
 
         javax.swing.GroupLayout jpnGraficoLayout = new javax.swing.GroupLayout(jpnGrafico);
         jpnGrafico.setLayout(jpnGraficoLayout);
         jpnGraficoLayout.setHorizontalGroup(
             jpnGraficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(grade_janela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpnGraficoLayout.setVerticalGroup(
             jpnGraficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(grade_janela, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -62,11 +221,33 @@ public class GraficoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botao_fecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_fecharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_fecharActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botao_desfazer;
+    private javax.swing.JButton botao_fechar;
+    private javax.swing.JButton botao_restaurar;
+    private java.awt.Checkbox cor_barras;
+    private java.awt.Checkbox cor_barras_grupo;
+    private java.awt.Checkbox grade;
+    private javax.swing.JPanel grade_elementos_graficos;
+    private javax.swing.JPanel grade_grafico;
+    private javax.swing.JPanel grade_janela;
     private javax.swing.JPanel jpnGrafico;
+    private java.awt.Checkbox legenda;
+    private java.awt.Checkbox rotulo_dados;
+    private java.awt.Checkbox rotulo_dados_porcentagem;
+    private java.awt.Checkbox rotulo_dados_valor;
+    private javax.swing.JComboBox<String> select_tipo_grafico;
+    private java.awt.Checkbox titulo;
+    private java.awt.Checkbox titulo_eixos;
+    private javax.swing.JLabel titulo_elementos_graficos;
+    private javax.swing.JLabel titulo_grafico_exibido;
     // End of variables declaration//GEN-END:variables
 }
