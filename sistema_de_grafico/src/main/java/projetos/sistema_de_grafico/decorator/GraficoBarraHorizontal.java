@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projetos.sistema_de_grafico.decorator;
-
 import java.awt.Dimension;
 import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
@@ -15,10 +9,6 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import projetos.sistema_de_grafico.model.Pessoa;
 
-/**
- *
- * @author Usuário
- */
 public class GraficoBarraHorizontal implements IGrafico{
     
     //cria dataset

@@ -1,5 +1,4 @@
 package projetos.sistema_de_grafico.model;
-
 public class Pessoa {
     private String sexo;
     private String nome;
