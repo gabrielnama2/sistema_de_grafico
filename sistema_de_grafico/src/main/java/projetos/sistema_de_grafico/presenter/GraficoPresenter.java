@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package projetos.sistema_de_grafico.view;
+package projetos.sistema_de_grafico.presenter;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import projetos.sistema_de_grafico.builder.DiretorGrafico;
 import projetos.sistema_de_grafico.builder.GraficoBarraHorizontalBuilder;
-import projetos.sistema_de_grafico.decorator.GraficoBarraHorizontal;
 import projetos.sistema_de_grafico.model.Pessoa;
-import projetos.sistema_de_grafico.presenter.LeituraArquivo;
+import projetos.sistema_de_grafico.view.GraficoView;
 
-/**
- *
- * @author Usuário
- */
 public class GraficoPresenter {
     
     private GraficoView view;
@@ -31,8 +23,18 @@ public class GraficoPresenter {
         diretor.fazerGraficoBarraHorizontal(builder);
         
         view.getJpnGrafico().setLayout(new BorderLayout());
-        // view.getJpnGrafico().add(graficoBarraHorizontal.criarGraficoBarra((ArrayList<Pessoa>) leitura.getPessoaCollection().getPessoas()));
         view.getJpnGrafico().add(builder.getResult().criarGraficoBarra((ArrayList<Pessoa>) leitura.getPessoaCollection().getPessoas()));
         view.setVisible(true);
+        
+        view.getBtnFechar().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                fechar();
+            }
+        });
+    }
+    
+    private void fechar(){
+        System.exit(0);
     }
 }
