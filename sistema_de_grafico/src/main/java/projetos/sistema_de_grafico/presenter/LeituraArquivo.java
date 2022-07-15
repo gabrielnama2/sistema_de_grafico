@@ -18,7 +18,6 @@ public class LeituraArquivo {
         BufferedReader bf = new BufferedReader(fr);
         String linha = bf.readLine();
         
-        //IMPRIME QUE ESTÁ SENDO LIDO DO ARQUIVO
         linha = bf.readLine();
             while(linha != null){
                 String[] dados = linha.split(",");
@@ -26,13 +25,9 @@ public class LeituraArquivo {
                 
                 //SALVA AS PESSOAS NA LISTA
                 pessoas.incluir(pessoa);
-                //System.out.println("\nPESSOA:\n" + "\nNome: " + pessoa.getNome() + "\nSexo: " + pessoa.getSexo()+ "\nEstado civil: " + pessoa.getEstado_civil());
                 linha = bf.readLine();
                 
             }
-            
-            //IMPRIME A LISTA DE PESSOAS
-            //pessoas.listar();
         }
         
         catch(Exception e){
